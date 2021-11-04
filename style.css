@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
 :root {
   --main-background: hsl(233, 47%, 7%);
   --card-background: hsl(244, 38%, 16%);
@@ -34,7 +41,8 @@ body {
   max-width: 325px;
   border-radius: 10px 10px 0 0;
   display: block;
-  filter: opacity(0.5) drop-shadow(0 0 0 rgba(132, 0, 255, 0.966));
+  -webkit-filter: opacity(0.5) drop-shadow(0 0 0 rgba(132, 0, 255, 0.966));
+          filter: opacity(0.5) drop-shadow(0 0 0 rgba(132, 0, 255, 0.966));
 }
 
 main {
@@ -97,9 +105,11 @@ main p {
   .cartao {
     max-width: 1110px;
     min-height: 445px;
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: (1fr)[2];
     grid-template-columns: repeat(2, 1fr);
-    grid-template-areas:
+        grid-template-areas:
       "info imga"
       "inf imga";
   }
@@ -110,11 +120,15 @@ main p {
 
   .cartao img {
     display: block;
-    object-fit: cover;
-    max-width: fit-content;
+    -o-object-fit: cover;
+       object-fit: cover;
     width: 100%;
+    max-width: -webkit-fit-content;
+    max-width: -moz-fit-content;
+    max-width: fit-content;
     height: 100%;
-    filter: opacity(0.5) drop-shadow(0 0 0 rgba(132, 0, 255, 0.966));
+    -webkit-filter: opacity(0.5) drop-shadow(0 0 0 rgba(132, 0, 255, 0.966));
+            filter: opacity(0.5) drop-shadow(0 0 0 rgba(132, 0, 255, 0.966));
     grid-area: imga;
     border-radius: 0px 10px 10px 0;
   }
@@ -143,8 +157,22 @@ main p {
 
   section {
     max-width: 380px;
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: (1fr)[3];
     grid-template-columns: repeat(3, 1fr);
-    grid-template-areas: "grid1 grid2 grid3";
+        grid-template-areas: "grid1 grid2 grid3";
+  }
+}
+
+@media (min-width: 1440px) {
+  .cartao {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+  .cartao img {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 2;
   }
 }
