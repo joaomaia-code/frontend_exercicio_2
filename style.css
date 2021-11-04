@@ -94,3 +94,14 @@ main p {
   color: var(--accent-color);
   cursor: pointer;
 }
+
+
+@media (min-width:1440px) {  
+ 
+  body {
+    background-color: var(--main-paragraph);
+  }
+
+  
+
+}
