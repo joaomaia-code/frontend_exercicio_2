@@ -22,8 +22,7 @@ body {
 
 .cartao {
   background-color: var(--card-background);
-  width: 90%;
-  max-width: 325px;
+  width: 85%;
   margin: auto;
   margin-top: 10%;
   border-radius: 10px;
@@ -31,7 +30,7 @@ body {
 }
 
 .cartao img {
-  max-width: 325px;
+  width: 100%;
   border-radius: 10px 10px 0 0;
   display: block;
   -webkit-filter: opacity(0.5) drop-shadow(0 0 0 rgba(132, 0, 255, 0.966));
