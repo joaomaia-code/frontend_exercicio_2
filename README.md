@@ -1,5 +1,4 @@
 # Frontend Mentor - Stats preview card component solution
-
 ## Table of contents
 
 - [Overview](#overview)
