@@ -11,7 +11,6 @@ body,
 a,
 p {
   font-family: "Inter", sans-serif;
-  font-family: "Lexend Deca", sans-serif;
   margin: 0;
   padding: 0;
   text-decoration: none;
@@ -23,8 +22,7 @@ body {
 
 .cartao {
   background-color: var(--card-background);
-  width: 90%;
-  max-width: 325px;
+  width: 85%;
   margin: auto;
   margin-top: 10%;
   border-radius: 10px;
@@ -32,10 +30,11 @@ body {
 }
 
 .cartao img {
-  max-width: 325px;
+  width: 100%;
   border-radius: 10px 10px 0 0;
   display: block;
-  filter: opacity(0.5) drop-shadow(0 0 0 rgba(132, 0, 255, 0.966));
+  -webkit-filter: opacity(0.5) drop-shadow(0 0 0 rgba(132, 0, 255, 0.966));
+          filter: opacity(0.5) drop-shadow(0 0 0 rgba(132, 0, 255, 0.966));
 }
 
 main {
@@ -71,7 +70,6 @@ main p {
 .formatacao p {
   font-family: "Inter", sans-serif;
   font-weight: 100;
-
   margin-top: -15px;
   margin-bottom: 30px;
 }
@@ -95,13 +93,67 @@ main p {
   cursor: pointer;
 }
 
-
-@media (min-width:1440px) {  
- 
-  body {
-    background-color: var(--main-paragraph);
+@media (min-width: 1440px) {
+  .cartao {
+    max-width: 1110px;
+    min-height: 445px;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr);
+    grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+      "info imga"
+      "inf imga";
   }
 
-  
+  .cartao {
+    grid-area: info;
+  }
 
+  .cartao img {
+    display: block;
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 100%;
+    max-width: -webkit-fit-content;
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+    height: 100%;
+    -webkit-filter: opacity(0.5) drop-shadow(0 0 0 rgba(132, 0, 255, 0.966));
+            filter: opacity(0.5) drop-shadow(0 0 0 rgba(132, 0, 255, 0.966));
+    grid-area: imga;
+    border-radius: 0px 10px 10px 0;
+  }
+
+  main {
+    margin: 70px 0 0 0;
+  }
+
+  main h1 {
+    padding-bottom: 3%;
+  }
+
+  main h1,
+  main p,
+  section {
+    max-width: 380px;
+    margin: 0 0 0 70px;
+  }
+
+  main h1,
+  main p,
+  section,
+  .formatacao {
+    text-align: left;
+  }
+
+  section {
+    max-width: 380px;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr);
+    grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: "grid1 grid2 grid3";
+  }
 }
+
